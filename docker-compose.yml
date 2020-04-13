@@ -1,0 +1,8 @@
+version: "3.7"
+
+services:
+  jsx:
+    build: ./jsx
+    volumes: 
+      - ./jsx:/usr/src/app
+    command: tail -F anything
