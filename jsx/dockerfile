@@ -1,7 +1,11 @@
-FROM node:12-slim
+FROM node:14-alpine
+RUN apk update -qq && \
+    apk add --no-cache build-base \
+    supervisor \
+    bash &&\
+    rm -rf /var/cache/apk/*
 
-RUN mkdir -p  /usr/src/app
-WORKDIR /usr/src/app
+WORKDIR /app
 
-COPY . /usr/src/app
+COPY . /app
 CMD npm install
