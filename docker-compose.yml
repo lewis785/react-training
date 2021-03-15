@@ -1,8 +1,13 @@
 version: "3.7"
 
 services:
-  jsx:
-    build: ./jsx
+  react-app:
+    build:
+      context: react-app
     volumes: 
-      - ./jsx:/usr/src/app
-    command: tail -F anything
+      - ./react-app:/app
+    environment:
+      - PORT=3001
+    ports:
+      - 3001:3001
+    # command: tail -F anything
