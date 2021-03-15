@@ -1,0 +1,15 @@
+FROM node:14-alpine
+RUN apk update -qq && \
+    apk add --no-cache build-base \
+    supervisor \
+    bash &&\
+    rm -rf /var/cache/apk/*
+
+WORKDIR /app
+
+COPY package*.json /app/
+CMD npm install
+
+COPY . /app/
+
+CMD ["npm", "run", "start"]
