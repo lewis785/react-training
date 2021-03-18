@@ -10,12 +10,21 @@ services:
       - PORT=3001
     ports:
       - 3001:3001
-  component:
+  components:
     build:
-      context: component
+      context: components
     volumes: 
       - ./component:/app
     environment:
       - PORT=3002
     ports:
       - 3002:3002
+  seasons:
+    build:
+      context: seasons
+    volumes: 
+      - ./seasons:/app
+    environment:
+      - PORT=3003
+    ports:
+      - 3003:3003
