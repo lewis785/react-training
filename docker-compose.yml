@@ -32,3 +32,5 @@ services:
       - ./pics:/app
     ports:
       - 3004:3000
+    environment:
+      - REACT_APP_UNSPLASH_API_KEY=${UNSPLASH_API_KEY}
