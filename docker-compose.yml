@@ -35,10 +35,12 @@ services:
     environment:
       - REACT_APP_UNSPLASH_API_KEY=${UNSPLASH_API_KEY}
   
-  youtube:
+  video:
     build:
       context: videos
     volumes: 
       - ./videos:/app
     ports:
       - 3005:3000
+    environment:
+      - REACT_APP_YOUTUBE_API_KEY=${YOUTUBE_API_KEY}
