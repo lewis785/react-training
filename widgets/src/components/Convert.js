@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
-import GoogleTranslate from '../apis/google'
 
 const Convert = ({ language, text }) => {
   const [translated, setTranslated] = useState('')
