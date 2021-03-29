@@ -44,6 +44,16 @@ services:
       - 3005:3000
     environment:
       - REACT_APP_YOUTUBE_API_KEY=${YOUTUBE_API_KEY}
+
+  video-hook:
+    build:
+      context: videos-hook
+    volumes: 
+      - ./videos-hook:/app
+    ports:
+      - 3006:3000
+    environment:
+      - REACT_APP_YOUTUBE_API_KEY=${YOUTUBE_API_KEY}
   
   widgets:
     build:
