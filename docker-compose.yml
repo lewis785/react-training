@@ -72,3 +72,11 @@ services:
       - ./songs:/app
     ports:
       - 3007:3000
+
+  blog:
+    build:
+      context: blog
+    volumes: 
+      - ./blog:/app
+    ports:
+      - 3008:3000
