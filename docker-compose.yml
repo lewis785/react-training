@@ -80,3 +80,11 @@ services:
       - ./blog:/app
     ports:
       - 3008:3000
+
+  stream-client:
+    build:
+      context: streams/client
+    volumes: 
+      - ./streams/client:/app
+    ports:
+      - 3009:3000  
