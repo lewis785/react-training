@@ -81,10 +81,23 @@ services:
     ports:
       - 3008:3000
 
-  stream-client:
+  streams-client:
     build:
       context: streams/client
     volumes: 
       - ./streams/client:/app
     ports:
       - 3009:3000  
+    environment:
+      - REACT_APP_GOOGLE_OAUTH_CLIENT_ID=${GOOGLE_OAUTH_CLIENT_ID}
+    depends_on:
+      - streams-api
+
+  
+  streams-api:
+    build: 
+      context: streams/api
+    volumes:
+      - ./streams/api:/app
+    ports:
+      - 3100:3100
