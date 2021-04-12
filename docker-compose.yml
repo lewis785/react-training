@@ -92,6 +92,7 @@ services:
       - REACT_APP_GOOGLE_OAUTH_CLIENT_ID=${GOOGLE_OAUTH_CLIENT_ID}
     depends_on:
       - streams-api
+      - streams-rtmp-server
 
   
   streams-api:
@@ -101,3 +102,12 @@ services:
       - ./streams/api:/app
     ports:
       - 3100:3100
+
+  streams-rtmp-server:
+    build: 
+      context: streams/rtmpserver
+    volumes:
+      - ./streams/rtmpserver:/app 
+    ports:
+      - 8000:8000
+      - 1935:1935
