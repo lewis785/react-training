@@ -93,7 +93,6 @@ services:
     depends_on:
       - streams-api
       - streams-rtmp-server
-
   
   streams-api:
     build: 
@@ -111,3 +110,11 @@ services:
     ports:
       - 8000:8000
       - 1935:1935
+
+  translate:
+    build:
+      context: translate
+    volumes: 
+      - ./translate:/app
+    ports:
+      - 3010:3000  
