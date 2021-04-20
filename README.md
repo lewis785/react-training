@@ -28,3 +28,4 @@ Multiple react projects make up the repository, each can be accessed from `local
 | Song List | | 3008 | [here](http://localhost:3008)
 | Blog | | 3009 | [here](http://localhost:3009)
 | Stream Client | | 3010 | [here](http://localhost:3010)
+| Space Finder | React project written with typescript | 3011 | [here](http://localhost:3010)
